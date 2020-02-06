@@ -120,7 +120,7 @@ docker build -t backend:v1 .
 
 # deploy
 kubectl apply -f database/deployment/database-deployment.yaml
-kubectl apply -f database/deployment/service-deployment.yaml
+kubectl apply -f database/deployment/database-service.yaml
 
 kubectl apply -f backend/deployment/backend-deployment.yaml
 kubectl apply -f backend/deployment/backend-service.yaml
