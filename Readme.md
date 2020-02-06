@@ -157,7 +157,10 @@ kubectl get ingress # or kubectl get ingresses or kubectl get ing
 
 ##### Proof:
 
-Go to minikube [dashboard](<http://127.0.0.1:52686/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default>) and see your deployments there.
+Go to minikube dashboard and see your deployments:
+```
+$ minikube dashboard
+```
 
 
 
