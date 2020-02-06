@@ -6,18 +6,19 @@ RUN apk add --update nodejs nodejs-npm
 # Set the directory we want to run the next commands for
 WORKDIR /code
 # Copy our source code into the container
-COPY . .
+ADD . .
 
 # Build the app
 RUN npm install && \
     npm run build
 
-##############################
-##############################
+
+# ##############################
+# ##############################
 
 FROM nginx
 
-COPY --from=builder /code/public /var/www/html
+COPY --from=builder /code/build /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
 WORKDIR /etc/nginx
 
