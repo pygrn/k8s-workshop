@@ -110,6 +110,10 @@ vi  /etc/hosts
 
 ...
 $IP       backend.domain.com frontend.domain.com
+
+# optional: apply completions for current session
+source <(kubectl completion bash)
+source <(minikube completion bash)
 ```
 
 
