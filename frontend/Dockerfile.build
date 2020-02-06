@@ -1,0 +1,13 @@
+FROM alpine:3.7 AS builder
+
+# Install base
+RUN apk add --update nodejs nodejs-npm
+
+# Set the directory we want to run the next commands for
+WORKDIR /code
+# Copy our source code into the container
+ADD . .
+
+# Build the app
+RUN npm install && \
+    npm run build
