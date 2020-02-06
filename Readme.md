@@ -99,10 +99,17 @@ minikube addons enable ingress
 # then check
 kc get po -n kube-system
 
-# add this line to your /etc/hosts
-...
-192.168.99.100       backend.domain.com frontend.domain.com
+# open Dashboard
+minikube dashboard
 
+# add minikube IP to hosts file
+sudo echo "$(minikube ip) backend.domain.com frontend.domain.com" >> /etc/hosts
+# OR add this line to your /etc/hosts
+minikube ip
+vi  /etc/hosts
+
+...
+$IP       backend.domain.com frontend.domain.com
 ```
 
 
