@@ -99,15 +99,20 @@ minikube addons enable ingress
 # then check
 kc get po -n kube-system
 
-# open Dashboard
+# open Dashboard (in another tab / term)
 minikube dashboard
+
+# output:
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ...
+🎉  Opening http://127.0.0.1:52690/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
 
 # add minikube IP to hosts file
 sudo echo "$(minikube ip) backend.domain.com frontend.domain.com" >> /etc/hosts
 # OR add this line to your /etc/hosts
 minikube ip
 vi  /etc/hosts
-
 ...
 $IP       backend.domain.com frontend.domain.com
 
