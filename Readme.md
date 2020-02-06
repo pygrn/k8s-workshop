@@ -126,8 +126,7 @@ Run these commands to create your first _deployments, services, and ingress_:
 
 ```bash
 # build backend docker image
-cd backend
-docker build -t backend:v1 .
+docker build -t backend:v1 backend
 
 # deploy
 kubectl apply -f database/deployment/database-deployment.yaml
@@ -178,8 +177,7 @@ In the _bite2_, we will deploy frontend using similar commands as in the first b
 
 ```bash
 # build backend docker image
-cd frontend
-docker build -t frontend:v1 .
+docker build -t frontend:v1 frontend
 ```
 
 This docker images can take some time since `npm install` is running inside. If you want to save your time in the future (you will build the image a couple of times), replace the Dockerfile with the following one:
