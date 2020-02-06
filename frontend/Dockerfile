@@ -10,15 +10,12 @@ COPY . .
 
 # Build the app
 RUN npm install && \
-    npm build
+    npm run build
 
 ##############################
 ##############################
 
 FROM nginx
-
-RUN npm install
-RUN npm build
 
 COPY --from=builder /code/public /var/www/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
